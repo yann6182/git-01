@@ -45,24 +45,16 @@ func main() {
 
     // Set colors
     // Set colors
-// Set colors
 colors := map[string]string{
-    "#": "82",   // green
-    "@": "223",  // light orange
-    "-": "205",  // pink
-    "$": "219",  // light pink
-    "%": "217",  // peach
-    "=": "39",   // blue
-    ">": "196",  // red
-    "+": "226",  // yellow
-    ".": "17",   // deep blue
-    ",": "15",   // white
-    ":": "09",   // purple
-    "&": "214",  // orange
-    "0": "0",    // black
-    "*": "245",  // grey
-}
-
+	"#": "82",      // green
+	"+": "226",     // yellow
+	",": "17",      // deep blue
+	".": "15",      // white
+	";": "99",      // purple
+	"&": "214",     // orange
+	"'": "0",       // black
+	"*": "245",     // grey
+  }
   
 
     // Import frames from data file
