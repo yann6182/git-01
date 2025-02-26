@@ -11,7 +11,6 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
-	"time"
 )
 
 func captureSigint() {
@@ -96,35 +95,13 @@ func main() {
     // Capture SIGINT
     captureSigint()
 
-    // Get start time
-    startTime := time.Now()
-
-    // infinity loop
-    for {
-        for _, frame := range frames {
-            // Print the next frame
-            for _, line := range frame[minRow:maxRow] {
-                for _, char := range line[minCol:maxCol] {
-                    fmt.Printf("\033[48;5;%sm%s", colors[string(char)], outputChar)
-                }
-                fmt.Println("\033[m")
+    for _, frame := range frames {
+        // Print the next frame
+        for _, line := range frame[minRow:maxRow] {
+            for _, char := range line[minCol:maxCol] {
+                fmt.Printf("\033[48;5;%sm%s", colors[string(char)], outputChar)
             }
-
-            // Print the time so far
-            printTime(startTime, (maxCol - minCol) * len(outputChar))
-
-            // Reset the frame and sleep
-            fmt.Print("\033[H")
-            time.Sleep(90 * time.Millisecond)
+            fmt.Println("\033[m")
         }
     }
 }
-
-
-func printTime(startTime time.Time, animWidth int) {
-    message := fmt.Sprintf("You have nyaned for %.f seconds!", time.Since(startTime).Seconds())
-    padding := (animWidth - (len(message) + 4)) / 2
-
-    fmt.Print(strings.Repeat(" ", padding))
-    fmt.Printf("\033[1;37;17m%s", message)
- }
