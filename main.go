@@ -44,8 +44,13 @@ func main() {
 
     // Set colors
     colors := map[string]string{
-        "#": "82",
-        ",": "0",
+        "#": "82",      // green
+        "@": "223",     // light orange
+        "-": "205",     // pink
+        "$": "219",     // light pink
+        "%": "217",     // peach
+        "=": "39",      // blue
+        ">": "196",     // red
     }
 
     // Import frames from data file
