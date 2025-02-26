@@ -13,6 +13,7 @@ import (
     "strings"
 )
 
+
 func captureSigint() {
     c := make(chan os.Signal, 1)
     signal.Notify(c, os.Interrupt)
@@ -43,15 +44,18 @@ func main() {
     const outputChar = "  "
 
     // Set colors
-    colors := map[string]string{
-        "#": "82",      // green
-        "@": "223",     // light orange
-        "-": "205",     // pink
-        "$": "219",     // light pink
-        "%": "217",     // peach
-        "=": "39",      // blue
-        ">": "196",     // red
-    }
+    // Set colors
+colors := map[string]string{
+	"#": "82",      // green
+	"+": "226",     // yellow
+	",": "17",      // deep blue
+	".": "15",      // white
+	";": "99",      // purple
+	"&": "214",     // orange
+	"'": "0",       // black
+	"*": "245",     // grey
+  }
+  
 
     // Import frames from data file
     framesFile, _ := filepath.Abs("assets/frames.json")
